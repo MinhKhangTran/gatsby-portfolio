@@ -21,9 +21,38 @@ body {
   height: 150px;
   width: 150px;
 }
+.chakra-ui-dark {
+  background: #021b49;
+  color: #b7cefc;
+}
+.chakra-ui-light {
+  background: #e3efff;
+  color: #1040a3;
+}
 .chakra-ui-light .active {
   color: #00091d;
 }
 .chakra-ui-dark .active {
   color: #5c8def;
+}
+.project-img {
+  height: 15rem;
+  object-position: top;
+}
+
+/* Scrollbar Styles */
+body::-webkit-scrollbar {
+  width: 9px;
+}
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #5c8def transparent;
+}
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #5c8def;
+  border-radius: 5px;
+  border: 3px solid transparent;
 }
