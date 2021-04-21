@@ -16,3 +16,14 @@ body {
 .footer {
   flex-shrink: 0;
 }
+.img {
+  border-radius: 100%;
+  height: 150px;
+  width: 150px;
+}
+.chakra-ui-light .active {
+  color: #00091d;
+}
+.chakra-ui-dark .active {
+  color: #5c8def;
+}

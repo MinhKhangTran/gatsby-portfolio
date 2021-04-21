@@ -9,17 +9,25 @@ import {
   Text,
   Tooltip,
 } from "@chakra-ui/react";
+//gatsby
+import { StaticImage } from "gatsby-plugin-image";
 
 const Hero = () => {
   return (
     <Box h="100%">
       <Grid justifyContent="center" alignItems="center" h="100%" w="100%">
         <Flex justify="center" align="center" direction="column">
-          <Avatar size="2xl" name="MKT" />
+          {/* <Avatar size="2xl" name="MKT" /> */}
+          <StaticImage
+            src="../assets/images/mkt.jpg"
+            alt="Das bin ich"
+            placeholder="blurred"
+            className="img"
+          />
           <Heading
             textAlign="center"
             w={{ base: "90%", md: "55%" }}
-            mt={{ base: "12", md: "16" }}
+            mt={{ base: "10", md: "14" }}
             fontFamily="mono"
           >
             Hallo, Ich bin{" "}

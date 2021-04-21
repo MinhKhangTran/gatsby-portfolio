@@ -1,9 +1,22 @@
-import { Flex, Spacer, Switch, Text } from "@chakra-ui/react";
+import {
+  Flex,
+  Spacer,
+  Switch,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import React from "react";
 import { Link } from "gatsby";
 import DarkModeSwitch from "./DarkModeSwitch";
 
-const Layout = () => {
+const links = [
+  { id: 1, text: "Über mich", url: "/" },
+  { id: 2, text: "Projekte", url: "/projects" },
+  { id: 3, text: "Uses", url: "/uses" },
+];
+
+const Navbar = () => {
+  const textColor = useColorModeValue("blau.900", "blau.300");
   return (
     <Flex
       align="center"
@@ -15,19 +28,17 @@ const Layout = () => {
       <DarkModeSwitch />
       <Spacer />
       <Flex>
-        <Link to="/">
-          <Text>Über mich</Text>
-        </Link>
-
-        <Link to="/projects">
-          <Text mx={6}>Projekte</Text>
-        </Link>
-
-        <Link to="/uses">
-          <Text>Uses</Text>
-        </Link>
+        {links.map((link) => {
+          return (
+            <Link key={link.id} to={link.url} activeClassName="active">
+              <Text ml={4} _hover={{ color: textColor }}>
+                {link.text}
+              </Text>
+            </Link>
+          );
+        })}
       </Flex>
     </Flex>
   );
 };
-export default Layout;
+export default Navbar;
