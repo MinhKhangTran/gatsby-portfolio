@@ -12,7 +12,7 @@ import {
 
 const Hero = () => {
   return (
-    <Box h="80vh">
+    <Box h="100%">
       <Grid justifyContent="center" alignItems="center" h="100%" w="100%">
         <Flex justify="center" align="center" direction="column">
           <Avatar size="2xl" name="MKT" />
