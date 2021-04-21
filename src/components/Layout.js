@@ -1,4 +1,11 @@
-import { Box, Flex, Spacer, Switch, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Spacer,
+  Switch,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -9,8 +16,11 @@ import "@fontsource/heebo";
 import "../assets/styles/main.css";
 
 const Layout = ({ children }) => {
+  //darkmode
+  const bgColor = useColorModeValue("blau.50", "blau.800");
+  const textColor = useColorModeValue("blau.600", "blau.100");
   return (
-    <Flex direction="column" height="100%" bg="blau.50">
+    <Flex direction="column" height="100%" bg={bgColor} color={textColor}>
       <Box className="content">
         <Navbar />
         <Box h="80%" as="section" w={{ base: "90%", md: "75%" }} mx="auto">

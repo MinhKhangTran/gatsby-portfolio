@@ -15,6 +15,7 @@ const Footer = () => {
       mt={4}
       justify="center"
       align="center"
+      mb={2}
     >
       <Text>Made with Gatsby and ChakraUI</Text>
 
