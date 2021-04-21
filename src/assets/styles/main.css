@@ -39,6 +39,16 @@ body {
   height: 15rem;
   object-position: top;
 }
+.project-card {
+  padding: 24px;
+  border-radius: 12px;
+}
+.chakra-ui-light .project-card {
+  background: #8aadf5;
+}
+.chakra-ui-dark .project-card {
+  background: #1040a3;
+}
 
 /* Scrollbar Styles */
 body::-webkit-scrollbar {

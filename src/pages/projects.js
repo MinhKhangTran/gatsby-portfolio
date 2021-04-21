@@ -12,6 +12,7 @@ import {
 import { graphql, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import slugify from "slugify";
+import { motion } from "framer-motion";
 
 const icons = {};
 
@@ -31,20 +32,18 @@ const ProjectsPage = ({ data }) => {
       </Text>
       <Grid
         mt={8}
-        gap={4}
+        gap={{ base: "4", md: "8" }}
         templateColumns={{ base: "repeat(1,1fr)", md: "repeat(2,1fr)" }}
       >
         {projects.map((project) => {
           const pathToImage = getImage(project.image);
           const slug = slugify(project.title, { lower: true });
           return (
-            <Box
-              _hover={{ boxShadow: "xl" }}
-              p={6}
-              borderRadius="xl"
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="project-card"
               key={project.id}
-              bg={bgColor}
-              cursor="pointer"
             >
               <Link to={`/${slug}`}>
                 <Flex mb={4}>
@@ -61,7 +60,7 @@ const ProjectsPage = ({ data }) => {
                   alt={project.title}
                   className="project-img"
                 ></GatsbyImage>
-                <Text>{project.description.description}</Text>
+                <Text>{project.excerpt.excerpt}</Text>
                 {project.stack.stack.map((item, index) => {
                   return (
                     <Badge
@@ -97,7 +96,7 @@ const ProjectsPage = ({ data }) => {
                   );
                 })}
               </Link>
-            </Box>
+            </motion.div>
           );
         })}
       </Grid>
@@ -110,12 +109,12 @@ export const query = graphql`
     allContentfulProject(sort: { fields: date, order: DESC }) {
       nodes {
         date(formatString: "Do MMM YYYY", locale: "de")
-        demoUrl
-        githubUrl
+
         title
         id
-        description {
-          description
+
+        excerpt {
+          excerpt
         }
         stack {
           stack
@@ -124,7 +123,6 @@ export const query = graphql`
           gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
         }
       }
-      totalCount
     }
   }
 `;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
   Avatar,
@@ -13,6 +13,7 @@ import {
 import { StaticImage } from "gatsby-plugin-image";
 
 const Hero = () => {
+  const [emoji, setEmoji] = useState("👀");
   return (
     <Box h="100%">
       <Grid justifyContent="center" alignItems="center" h="100%" w="100%">
@@ -34,8 +35,8 @@ const Hero = () => {
             <Tooltip
               placement="top-end"
               hasArrow
-              label="Du kannst mich Khang nennen. Minh ist ein Zwischenname und Tran mein Nachname 🤫"
-              closeDelay={200}
+              label="Du kannst mich Khang nennen. Minh ist ein Zwischenname und Tran mein Nachname"
+              // closeDelay={200}
               colorScheme="blue"
               fontSize="lg"
               borderRadius="md"
@@ -44,10 +45,16 @@ const Hero = () => {
                 whiteSpace="nowrap"
                 as="span"
                 _hover={{ borderBottom: "1px" }}
+                onMouseOver={() => {
+                  setEmoji("🤫");
+                }}
+                onMouseOut={() => {
+                  setEmoji("👀");
+                }}
               >
                 Minh Khang Tran{" "}
                 <span aria-label="augen" role="img">
-                  👀
+                  {emoji}
                 </span>
               </Text>
             </Tooltip>
