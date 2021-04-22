@@ -8,20 +8,22 @@ import {
   Flex,
   Spacer,
   Badge,
+  IconButton,
+  ButtonGroup,
 } from "@chakra-ui/react";
 import { graphql, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import slugify from "slugify";
 import { motion } from "framer-motion";
-
-const icons = {};
+import { ImGithub } from "react-icons/im";
+import { FaShareSquare } from "react-icons/fa";
 
 const ProjectsPage = ({ data }) => {
   const bgColor = useColorModeValue("blau.200", "blau.600");
   const {
     allContentfulProject: { nodes: projects },
   } = data;
-  console.log(projects);
+  // console.log(projects);
   return (
     <Box>
       <Heading>Ausgesuchte Projekte</Heading>
@@ -41,61 +43,83 @@ const ProjectsPage = ({ data }) => {
           return (
             <motion.div
               whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileTap={{ scale: 0.99 }}
               className="project-card"
               key={project.id}
             >
-              <Link to={`/${slug}`}>
-                <Flex mb={4}>
-                  <Heading as="h3" fontSize="lg">
-                    <Text casing="capitalize">{project.title}</Text>
-                  </Heading>
-                  <Spacer />
-                  <Heading as="h3" fontSize="lg">
-                    {project.date}
-                  </Heading>
-                </Flex>
-                <GatsbyImage
-                  image={pathToImage}
-                  alt={project.title}
-                  className="project-img"
-                ></GatsbyImage>
-                <Text>{project.excerpt.excerpt}</Text>
-                {project.stack.stack.map((item, index) => {
-                  return (
-                    <Badge
-                      colorScheme={
-                        item === "gatsby"
-                          ? "purple"
-                          : item === "chakraUI"
-                          ? "teal"
-                          : item === "nextjs"
-                          ? "gray"
-                          : item === "graphQL"
-                          ? "purple"
-                          : item === "rest"
-                          ? "orange"
-                          : item === "redux"
-                          ? "purple"
-                          : item === "apollo"
-                          ? "purple"
-                          : "blau"
-                      }
-                      mr={2}
-                      key={index}
-                      variant={
-                        item === "graphQL"
-                          ? "outline"
-                          : item === "redux"
-                          ? "solid"
-                          : "subtle"
-                      }
-                    >
-                      {item}
-                    </Badge>
-                  );
-                })}
-              </Link>
+              {/* <Link to={`/${slug}`}> */}
+              <Flex mb={4}>
+                <Heading as="h3" fontSize="lg">
+                  <Text casing="capitalize">{project.title}</Text>
+                </Heading>
+                <Spacer />
+                <Heading as="h3" fontSize="lg">
+                  {project.date}
+                </Heading>
+              </Flex>
+              <GatsbyImage
+                image={pathToImage}
+                alt={project.title}
+                className="project-img"
+              ></GatsbyImage>
+              <Text>{project.excerpt.excerpt}</Text>
+              {project.stack.stack.map((item, index) => {
+                return (
+                  <Badge
+                    colorScheme={
+                      item === "gatsby"
+                        ? "purple"
+                        : item === "chakraUI"
+                        ? "teal"
+                        : item === "nextjs"
+                        ? "gray"
+                        : item === "graphQL"
+                        ? "purple"
+                        : item === "rest"
+                        ? "orange"
+                        : item === "redux"
+                        ? "purple"
+                        : item === "apollo"
+                        ? "purple"
+                        : "blau"
+                    }
+                    mr={2}
+                    key={index}
+                    variant={
+                      item === "graphQL"
+                        ? "outline"
+                        : item === "redux"
+                        ? "solid"
+                        : "subtle"
+                    }
+                  >
+                    {item}
+                  </Badge>
+                );
+              })}
+              <br />
+              {/* </Link> */}
+              <ButtonGroup mt={8}>
+                <a href={project.githubUrl} target="_blank">
+                  <IconButton
+                    colorScheme="blau"
+                    aria-label="github"
+                    variant="link"
+                    fontSize="30px"
+                    icon={<ImGithub />}
+                  ></IconButton>
+                </a>
+
+                <a href={project.demoUrl} target="_blank">
+                  <IconButton
+                    colorScheme="blau"
+                    aria-label="share"
+                    variant="link"
+                    fontSize="30px"
+                    icon={<FaShareSquare />}
+                  ></IconButton>
+                </a>
+              </ButtonGroup>
             </motion.div>
           );
         })}
@@ -109,9 +133,10 @@ export const query = graphql`
     allContentfulProject(sort: { fields: date, order: DESC }) {
       nodes {
         date(formatString: "Do MMM YYYY", locale: "de")
-
+        githubUrl
         title
         id
+        demoUrl
 
         excerpt {
           excerpt

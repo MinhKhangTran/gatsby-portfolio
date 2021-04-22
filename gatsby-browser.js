@@ -5,7 +5,7 @@ const { theme } = require("./src/assets/styles/theme");
 
 exports.wrapPageElement = ({ element, props }) => {
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider resetCSS theme={theme}>
       <Layout {...props}>{element}</Layout>
     </ChakraProvider>
   );
