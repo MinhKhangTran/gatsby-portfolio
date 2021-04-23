@@ -7,7 +7,7 @@ module.exports = {
     title: `Mein Portfolio`,
     description: `Mein Portfolio gemacht mit Gatsby. Als UI-Framework habe ich ChakraUI benutzt. Meine Daten habe ich über den headless CMS Contentful erstellt`,
     titleTemplate: `%s | MKT Portfolio`,
-    url: `https://temp-strapi-portfolio.netlify.app`,
+    url: `https://portfolio-mkt-gatsby.netlify.app`,
     image: `/mainImg.png`,
   },
   plugins: [
