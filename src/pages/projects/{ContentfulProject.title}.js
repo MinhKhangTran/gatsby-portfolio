@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import {
   Box,
+  Button,
   ButtonGroup,
   ChakraProvider,
   Heading,
@@ -12,6 +13,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import ReactMarkdown from "react-markdown";
 import { ImAttachment, ImGithub } from "react-icons/im";
 import { FaShareSquare } from "react-icons/fa";
+import { Link } from "gatsby";
 
 const ProjectTemplate = ({ pageContext: { title }, data }) => {
   // console.log(title, data);
@@ -21,6 +23,9 @@ const ProjectTemplate = ({ pageContext: { title }, data }) => {
 
   return (
     <Box>
+      <Button variant="solid" colorScheme="blau">
+        <Link to="/projects">⬅ Zurück zur Übersicht</Link>
+      </Button>
       <Heading textAlign="center" mb={4}>
         <Text casing="uppercase">{title}</Text>
       </Heading>

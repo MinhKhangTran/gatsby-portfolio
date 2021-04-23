@@ -47,58 +47,58 @@ const ProjectsPage = ({ data }) => {
               className="project-card"
               key={project.id}
             >
-              {/* <Link to={`/${slug}`}> */}
-              <Flex mb={4}>
-                <Heading as="h3" fontSize="lg">
-                  <Text casing="capitalize">{project.title}</Text>
-                </Heading>
-                <Spacer />
-                <Heading as="h3" fontSize="lg">
-                  {project.date}
-                </Heading>
-              </Flex>
-              <GatsbyImage
-                image={pathToImage}
-                alt={project.title}
-                className="project-img"
-              ></GatsbyImage>
-              <Text>{project.excerpt.excerpt}</Text>
-              {project.stack.stack.map((item, index) => {
-                return (
-                  <Badge
-                    colorScheme={
-                      item === "gatsby"
-                        ? "purple"
-                        : item === "chakraUI"
-                        ? "teal"
-                        : item === "nextjs"
-                        ? "gray"
-                        : item === "graphQL"
-                        ? "purple"
-                        : item === "rest"
-                        ? "orange"
-                        : item === "redux"
-                        ? "purple"
-                        : item === "apollo"
-                        ? "purple"
-                        : "blau"
-                    }
-                    mr={2}
-                    key={index}
-                    variant={
-                      item === "graphQL"
-                        ? "outline"
-                        : item === "redux"
-                        ? "solid"
-                        : "subtle"
-                    }
-                  >
-                    {item}
-                  </Badge>
-                );
-              })}
-              <br />
-              {/* </Link> */}
+              <Link to={`/projects/${slug}`}>
+                <Flex mb={4}>
+                  <Heading as="h3" fontSize="lg">
+                    <Text casing="capitalize">{project.title}</Text>
+                  </Heading>
+                  <Spacer />
+                  <Heading as="h3" fontSize="lg">
+                    {project.date}
+                  </Heading>
+                </Flex>
+                <GatsbyImage
+                  image={pathToImage}
+                  alt={project.title}
+                  className="project-img"
+                ></GatsbyImage>
+                <Text>{project.excerpt.excerpt}</Text>
+                {project.stack.stack.map((item, index) => {
+                  return (
+                    <Badge
+                      colorScheme={
+                        item === "gatsby"
+                          ? "purple"
+                          : item === "chakraUI"
+                          ? "teal"
+                          : item === "nextjs"
+                          ? "gray"
+                          : item === "graphQL"
+                          ? "purple"
+                          : item === "rest"
+                          ? "orange"
+                          : item === "redux"
+                          ? "purple"
+                          : item === "apollo"
+                          ? "purple"
+                          : "blau"
+                      }
+                      mr={2}
+                      key={index}
+                      variant={
+                        item === "graphQL"
+                          ? "outline"
+                          : item === "redux"
+                          ? "solid"
+                          : "subtle"
+                      }
+                    >
+                      {item}
+                    </Badge>
+                  );
+                })}
+                <br />
+              </Link>
               <ButtonGroup mt={8}>
                 <a href={project.githubUrl} target="_blank">
                   <IconButton
