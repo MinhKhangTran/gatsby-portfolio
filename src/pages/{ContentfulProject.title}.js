@@ -1,30 +1,43 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Box, ButtonGroup, Heading, IconButton, Text } from "@chakra-ui/react";
+import {
+  Box,
+  ButtonGroup,
+  ChakraProvider,
+  Heading,
+  IconButton,
+  Text,
+} from "@chakra-ui/react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import ReactMarkdown from "react-markdown";
-import { ImGithub } from "react-icons/im";
+import { ImAttachment, ImGithub } from "react-icons/im";
 import { FaShareSquare } from "react-icons/fa";
 
 const ProjectTemplate = ({ pageContext: { title }, data }) => {
   // console.log(title, data);
   const {
-    contentfulProject: {
-      date,
-      demoUrl,
-      description: { description },
-      githubUrl,
-      image,
-      stack,
-    },
+    contentfulProject: { date, demoUrl, desc, githubUrl, image, stack },
   } = data;
+
   return (
     <Box>
       <Heading textAlign="center" mb={4}>
         <Text casing="uppercase">{title}</Text>
       </Heading>
       <GatsbyImage image={getImage(image)} alt={title} />
-      <ReactMarkdown children={description} />
+
+      {desc.map((item) => {
+        {
+          /* console.log(item); */
+        }
+        return (
+          <Box key={item.id}>
+            <Heading>{item.title}</Heading>
+            <Text>{item.desc.desc}</Text>
+            <GatsbyImage image={getImage(item.image)} alt={item.titel} />
+          </Box>
+        );
+      })}
       <ButtonGroup mt={8}>
         <IconButton
           colorScheme="blau"
@@ -48,23 +61,30 @@ const ProjectTemplate = ({ pageContext: { title }, data }) => {
 export const query = graphql`
   query READ_PROJECT($title: String!) {
     contentfulProject(title: { eq: $title }) {
-      date(formatString: "Do MMM YYYY", locale: "de")
+      date(formatString: "DO MMM YYYY", locale: "de")
       demoUrl
-      description {
-        description
-      }
+      githubUrl
+      id
+      title
       excerpt {
         excerpt
       }
-      githubUrl
-      id
-      image {
-        gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+      desc {
+        title
+        id
+        desc {
+          desc
+        }
+        image {
+          gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+        }
       }
       stack {
         stack
       }
-      title
+      image {
+        gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+      }
     }
   }
 `;

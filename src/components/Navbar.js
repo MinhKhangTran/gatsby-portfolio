@@ -8,15 +8,28 @@ import {
 import React from "react";
 import { Link } from "gatsby";
 import DarkModeSwitch from "./DarkModeSwitch";
+import { useStaticQuery, graphql } from "gatsby";
 
-const links = [
-  { id: 1, text: "Über mich", url: "/" },
-  { id: 2, text: "Projekte", url: "/projects" },
-  { id: 3, text: "Uses", url: "/uses" },
-];
+// const links = [
+//   { id: 1, text: "Über mich", url: "/" },
+//   { id: 2, text: "Projekte", url: "/projects" },
+//   { id: 3, text: "Uses", url: "/uses" },
+// ];
 
 const Navbar = () => {
   const textColor = useColorModeValue("blau.900", "blau.300");
+  const data = useStaticQuery(graphql`
+    {
+      allContentfulNavbar(sort: { fields: createdAt, order: ASC }) {
+        nodes {
+          url
+          text
+          id
+        }
+      }
+    }
+  `);
+  const links = data.allContentfulNavbar.nodes;
   return (
     <Flex
       align="center"
@@ -31,7 +44,7 @@ const Navbar = () => {
         {links.map((link) => {
           return (
             <Link key={link.id} to={link.url} activeClassName="active">
-              <Text ml={4} _hover={{ color: textColor }}>
+              <Text casing="capitalize" ml={4} _hover={{ color: textColor }}>
                 {link.text}
               </Text>
             </Link>

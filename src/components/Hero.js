@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { useStaticQuery, graphql } from "gatsby";
 import {
   Avatar,
   Box,
@@ -14,6 +14,19 @@ import { StaticImage } from "gatsby-plugin-image";
 
 const Hero = () => {
   const [emoji, setEmoji] = useState("👀");
+  const data = useStaticQuery(graphql`
+    {
+      allContentfulAboutme {
+        nodes {
+          childContentfulAboutmeAboutTextNode {
+            about
+          }
+        }
+      }
+    }
+  `);
+  const { allContentfulAboutme: about } = data;
+  // console.log(about.nodes[0].childContentfulAboutmeAboutTextNode.about);
   return (
     <Box h="100%">
       <Grid justifyContent="center" alignItems="center" h="100%" w="100%">
@@ -65,9 +78,7 @@ const Hero = () => {
             mt={8}
             w={{ base: "90%", md: "55%" }}
           >
-            Ich bin ein Ingenieur, der gelegentlich schwere Gewicht hebt und
-            koreanisch lernt. In meiner Freizeit lerne ich etwas über Web
-            Development.
+            {about.nodes[0].childContentfulAboutmeAboutTextNode.about}
           </Text>
         </Flex>
       </Grid>
