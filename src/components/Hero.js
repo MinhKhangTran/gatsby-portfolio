@@ -1,14 +1,6 @@
 import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import {
-  Avatar,
-  Box,
-  Flex,
-  Grid,
-  Heading,
-  Text,
-  Tooltip,
-} from "@chakra-ui/react";
+import { Box, Flex, Grid, Heading, Text, Tooltip } from "@chakra-ui/react";
 //gatsby
 import { StaticImage } from "gatsby-plugin-image";
 

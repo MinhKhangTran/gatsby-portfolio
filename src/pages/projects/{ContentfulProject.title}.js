@@ -4,21 +4,19 @@ import {
   Box,
   Button,
   ButtonGroup,
-  ChakraProvider,
   Heading,
   IconButton,
   Text,
 } from "@chakra-ui/react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import ReactMarkdown from "react-markdown";
-import { ImAttachment, ImGithub } from "react-icons/im";
+import { ImGithub } from "react-icons/im";
 import { FaShareSquare } from "react-icons/fa";
 import { Link } from "gatsby";
 
 const ProjectTemplate = ({ pageContext: { title }, data }) => {
   // console.log(title, data);
   const {
-    contentfulProject: { date, demoUrl, desc, githubUrl, image, stack },
+    contentfulProject: { desc, image },
   } = data;
 
   return (
@@ -32,9 +30,6 @@ const ProjectTemplate = ({ pageContext: { title }, data }) => {
       <GatsbyImage image={getImage(image)} alt={title} />
 
       {desc.map((item) => {
-        {
-          /* console.log(item); */
-        }
         return (
           <Box key={item.id}>
             <Heading>{item.title}</Heading>

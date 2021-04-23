@@ -4,7 +4,6 @@ import {
   Grid,
   Heading,
   Text,
-  useColorModeValue,
   Flex,
   Spacer,
   Badge,
@@ -19,7 +18,6 @@ import { ImGithub } from "react-icons/im";
 import { FaShareSquare } from "react-icons/fa";
 
 const ProjectsPage = ({ data }) => {
-  const bgColor = useColorModeValue("blau.200", "blau.600");
   const {
     allContentfulProject: { nodes: projects },
   } = data;
@@ -100,7 +98,7 @@ const ProjectsPage = ({ data }) => {
                 <br />
               </Link>
               <ButtonGroup mt={8}>
-                <a href={project.githubUrl} target="_blank">
+                <a href={project.githubUrl} target="_blank" rel="noreferrer">
                   <IconButton
                     colorScheme="blau"
                     aria-label="github"
@@ -110,7 +108,7 @@ const ProjectsPage = ({ data }) => {
                   ></IconButton>
                 </a>
 
-                <a href={project.demoUrl} target="_blank">
+                <a href={project.demoUrl} target="_blank" rel="noreferrer">
                   <IconButton
                     colorScheme="blau"
                     aria-label="share"

@@ -1,18 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Heading,
-  Text,
-  Table,
-  Thead,
-  Tbody,
-  Tfoot,
-  Tr,
-  Th,
-  Td,
-  TableCaption,
-  Divider,
-} from "@chakra-ui/react";
+import { Box, Heading, Text, Divider } from "@chakra-ui/react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import TableComponent from "../components/TableComponent";

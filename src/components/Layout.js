@@ -1,11 +1,4 @@
-import {
-  Box,
-  Flex,
-  Spacer,
-  Switch,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
