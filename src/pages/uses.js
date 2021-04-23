@@ -3,42 +3,46 @@ import { Box, Heading, Text, Divider } from "@chakra-ui/react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import TableComponent from "../components/TableComponent";
+import Seo from "../components/Seo";
 
 const UsesPage = ({ data: { allContentfulUses } }) => {
   const software = allContentfulUses.nodes[0].software;
   const hardware = allContentfulUses.nodes[0].hardware;
   const equip = allContentfulUses.nodes[0].equip;
-  console.log(allContentfulUses);
-  console.log(software);
-  console.log(hardware);
-  console.log(equip);
+  // console.log(allContentfulUses);
+  // console.log(software);
+  // console.log(hardware);
+  // console.log(equip);
   return (
-    <Box>
-      <Heading as="h1" fontSize="3xl" mb={6}>
-        /Uses
-      </Heading>
-      <GatsbyImage
-        image={getImage(allContentfulUses.nodes[0].image)}
-        alt={allContentfulUses.nodes[0].image.title}
-      />
-      <Text>{allContentfulUses.nodes[0].usesDesc.usesDesc}</Text>
-      {/* SOFTWARE TABLE */}
-      <TableComponent title="Software" array={software} />
-      {/* HARDWARE TABLE */}
-      <TableComponent title="Hardware" array={hardware} />
-      <Divider colorScheme="blau" orientation="horizontal" />
-      {/* GYM */}
-      <Heading as="h2" fontSize="2xl" mt={8} mb={6}>
-        /Gym-Uses
-      </Heading>
-      <GatsbyImage
-        image={getImage(allContentfulUses.nodes[0].gymImage)}
-        alt={allContentfulUses.nodes[0].gymImage.title}
-      />
-      <Text>{allContentfulUses.nodes[0].gymDesc.gymDesc}</Text>
-      {/* EQUIP TABLE */}
-      <TableComponent title="Equipment" array={equip} color="blue" />
-    </Box>
+    <>
+      <Seo title="/Uses" />
+      <Box>
+        <Heading as="h1" fontSize="3xl" mb={6}>
+          /Uses
+        </Heading>
+        <GatsbyImage
+          image={getImage(allContentfulUses.nodes[0].image)}
+          alt={allContentfulUses.nodes[0].image.title}
+        />
+        <Text>{allContentfulUses.nodes[0].usesDesc.usesDesc}</Text>
+        {/* SOFTWARE TABLE */}
+        <TableComponent title="Software" array={software} />
+        {/* HARDWARE TABLE */}
+        <TableComponent title="Hardware" array={hardware} />
+        <Divider colorScheme="blau" orientation="horizontal" />
+        {/* GYM */}
+        <Heading as="h2" fontSize="2xl" mt={8} mb={6}>
+          /Gym-Uses
+        </Heading>
+        <GatsbyImage
+          image={getImage(allContentfulUses.nodes[0].gymImage)}
+          alt={allContentfulUses.nodes[0].gymImage.title}
+        />
+        <Text>{allContentfulUses.nodes[0].gymDesc.gymDesc}</Text>
+        {/* EQUIP TABLE */}
+        <TableComponent title="Equipment" array={equip} color="blue" />
+      </Box>
+    </>
   );
 };
 
@@ -47,7 +51,7 @@ export const query = graphql`
     allContentfulUses {
       nodes {
         image {
-          gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+          gatsbyImageData(placeholder: TRACED_SVG, layout: CONSTRAINED)
           title
         }
         usesDesc {

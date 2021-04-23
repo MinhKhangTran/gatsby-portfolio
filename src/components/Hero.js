@@ -27,7 +27,7 @@ const Hero = () => {
           <StaticImage
             src="../assets/images/mkt.jpg"
             alt="Das bin ich"
-            placeholder="blurred"
+            placeholder="tracedSVG"
             className="img"
           />
           <Heading

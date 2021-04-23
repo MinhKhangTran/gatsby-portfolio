@@ -4,7 +4,11 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: "mein-portfolio",
+    title: `Mein Portfolio`,
+    description: `Mein Portfolio gemacht mit Gatsby. Als UI-Framework habe ich ChakraUI benutzt. Meine Daten habe ich über den headless CMS Contentful erstellt`,
+    titleTemplate: `%s | MKT Portfolio`,
+    url: `https://temp-strapi-portfolio.netlify.app`,
+    image: `/mainImg.png`,
   },
   plugins: [
     "@chakra-ui/gatsby-plugin",
