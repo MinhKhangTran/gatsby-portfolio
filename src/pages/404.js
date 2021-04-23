@@ -1,58 +1,39 @@
 import * as React from "react";
+import { Box, Grid, Heading, Text } from "@chakra-ui/react";
 import { Link } from "gatsby";
 import Seo from "../components/Seo";
-
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-};
-
-const paragraphStyles = {
-  marginBottom: 48,
-};
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-};
-
-// markup
-const NotFoundPage = () => {
+const ErrorPage = () => {
   return (
     <>
-      <Seo title="E.R.R.O.R." />
-      <main style={pageStyles}>
-        <title>Not found</title>
-        <h1 style={headingStyles}>Page not found</h1>
-        <p style={paragraphStyles}>
-          Sorry{" "}
-          <span role="img" aria-label="Pensive emoji">
-            😔
-          </span>{" "}
-          we couldn’t find what you were looking for.
-          <br />
-          {process.env.NODE_ENV === "development" ? (
-            <>
-              <br />
-              Try creating a page in <code style={codeStyles}>src/pages/</code>.
-              <br />
-            </>
-          ) : null}
-          <br />
-          <Link to="/">Go home</Link>.
-        </p>
-      </main>
+      <Seo title="E.R.R.O.R"></Seo>
+      <Grid placeItems="center" h="70vh">
+        <Box textAlign="center">
+          <Heading
+            bgGradient="linear(to-l, blau.400,blue.400)"
+            bgClip="text"
+            fontSize="6xl"
+            fontWeight="extrabold"
+          >
+            404 Error
+          </Heading>
+          <Text fontSize="2xl" mt={4} color="blau.500">
+            Diese Seite gibt es nicht{" "}
+            <span role="img" aria-label="emoji">
+              🥺
+            </span>
+            . Bitte gehe zurück zur{" "}
+            <Text
+              bgGradient="linear(to-l, blau.400,blue.400)"
+              bgClip="text"
+              fontWeight="semibold"
+              as="span"
+            >
+              <Link to="/">Homepage</Link>
+            </Text>
+          </Text>
+        </Box>
+      </Grid>
     </>
   );
 };
-
-export default NotFoundPage;
+export default ErrorPage;
