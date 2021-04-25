@@ -15,7 +15,10 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 그래서 올해에 (2021) 또 한국어를 공부하기 시작하려고 해요. 한국에서 서강 책을 많이 샀어요. 그래서 오늘 부터 서강4a 공부해요. 옛날에 한국에서 3b 까지 혼자 공부했어요. 그래서 서강 4a로 시작하는 게 좋은 생각인 것 같아요.
 
-<GatsbyImage image={getImage(props.embeddedImages[0])} alt="sogang 4a" />
+<GatsbyImage
+  image={getImage(props.embeddedImages[0])}
+  alt={props.embeddedImages[0].name}
+/>
 
 저는 작은 회사에서 일해서 주중에 시간이 별로 없어요. 그렇지만 매일 약 1시간씩 공부할 거예요. 1시간은 짧지만 이렇게 하면 매일 할 수 있어요. 왜냐하면 1시간은 길지 않기 때문이에요.
 

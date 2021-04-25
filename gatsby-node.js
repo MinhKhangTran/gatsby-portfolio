@@ -12,6 +12,7 @@ exports.createPages = async ({ graphql, actions }) => {
         nodes {
           frontmatter {
             slug
+            title
           }
           id
         }
@@ -21,15 +22,21 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const posts = result.data.allMdx.nodes;
   posts.forEach(({ frontmatter: { slug } }, index) => {
-    const prevId = index === 0 ? null : posts[index - 1].id;
-    const nextId = index === posts.length - 1 ? null : posts[index + 1].id;
+    const prevSlug = index === 0 ? null : posts[index - 1].frontmatter.slug;
+    const prevTitle = index === 0 ? null : posts[index - 1].frontmatter.title;
+    const nextSlug =
+      index === posts.length - 1 ? null : posts[index + 1].frontmatter.slug;
+    const nextTitle =
+      index === posts.length - 1 ? null : posts[index + 1].frontmatter.title;
     createPage({
       path: `/blog/${slug}`,
       component: path.resolve(`src/templates/post-template.js`),
       context: {
         slug,
-        prevId,
-        nextId,
+        prevSlug,
+        prevTitle,
+        nextSlug,
+        nextTitle,
       },
     });
   });

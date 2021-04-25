@@ -11,7 +11,10 @@ embeddedImages:
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-<GatsbyImage image={getImage(props.embeddedImages[0])} alt="Seoul" />
+<GatsbyImage
+  image={getImage(props.embeddedImages[0])}
+  alt={props.embeddedImages[0].name}
+/>
 
 저는 요즘 서강 책으로 한국어를 배우는데요. 첫째 과에서 배운 내용은 자기소개예요. 그래서 맨날 자기소개를 썼어요. 하지만 자기소개는 중요해서 지금 정보를 더 많이 쓰고 싶어요.
 

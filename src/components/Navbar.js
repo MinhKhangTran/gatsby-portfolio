@@ -1,10 +1,4 @@
-import {
-  Flex,
-  IconButton,
-  Spacer,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Flex, Spacer, Text, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "gatsby";
 import DarkModeSwitch from "./DarkModeSwitch";
