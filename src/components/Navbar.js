@@ -1,8 +1,16 @@
-import { Flex, Spacer, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+  Flex,
+  IconButton,
+  Spacer,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import React from "react";
 import { Link } from "gatsby";
 import DarkModeSwitch from "./DarkModeSwitch";
 import { useStaticQuery, graphql } from "gatsby";
+
+import Sidebar from "./Sidebar";
 
 // const links = [
 //   { id: 1, text: "Über mich", url: "/" },
@@ -34,7 +42,8 @@ const Navbar = () => {
     >
       <DarkModeSwitch />
       <Spacer />
-      <Flex>
+      {/* big screen */}
+      <Flex display={{ base: "none", md: "flex" }}>
         {links.map((link) => {
           return (
             <Link key={link.id} to={link.url} activeClassName="active">
@@ -45,6 +54,8 @@ const Navbar = () => {
           );
         })}
       </Flex>
+      {/* small screen */}
+      <Sidebar links={links} />
     </Flex>
   );
 };
