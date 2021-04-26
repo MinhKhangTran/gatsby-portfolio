@@ -52,6 +52,18 @@ body {
 .chakra-ui-dark .project-card {
   background: #1040a3;
 }
+.blog-img {
+  height: 20rem;
+  border-radius: 15px;
+}
+.blog-card {
+  margin-bottom: 16px;
+  padding: 16px 0;
+  border-bottom: 2px solid #8aadf5;
+}
+.calendar {
+  padding-right: 6px;
+}
 
 /* Scrollbar Styles */
 body::-webkit-scrollbar {
