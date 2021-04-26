@@ -24,9 +24,11 @@ const PostPage = ({ data, pageContext }) => {
     <>
       <Seo title={title} />
       <Box>
-        <Button my={8} colorScheme="blau">
-          Zurück zu den Posts
-        </Button>
+        <Link to="/blog">
+          <Button my={8} colorScheme="blau">
+            Zurück zu den Posts
+          </Button>
+        </Link>
         <Heading>{title}</Heading>
         <MDXRenderer embeddedImages={embeddedImages}>{body}</MDXRenderer>
         {biggerThanMobile ? (

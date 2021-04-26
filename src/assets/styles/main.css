@@ -64,6 +64,11 @@ body {
 .calendar {
   padding-right: 6px;
 }
+.post-img {
+  border-radius: 15px;
+  margin: 1rem 0;
+  display: block;
+}
 
 /* Scrollbar Styles */
 body::-webkit-scrollbar {
