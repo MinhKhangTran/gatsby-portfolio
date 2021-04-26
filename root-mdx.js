@@ -15,8 +15,7 @@ const components = {
   //blockquote
   blockquote: MyBlockquote,
   //unordered List
-  //video
-  //divider
+
   hr: MyHr,
 };
 export const wrapMDX = ({ element }) => {

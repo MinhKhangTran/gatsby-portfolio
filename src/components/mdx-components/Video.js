@@ -22,6 +22,7 @@ export const Video = ({ src, title, ...props }) => {
 const IframeVideoWrapper = styled.div`
   width: 90vw;
   max-width: 700px;
+  margin: 0 auto;
   .video {
     overflow: hidden;
     /* // Calculated from the aspect ration of the content (in case of 16:9 it is 9/16= 0.5625) */

@@ -1,4 +1,4 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import React from "react";
 import { graphql, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
@@ -30,16 +30,25 @@ const BlogPage = ({ data }) => {
                 <Heading mb={1} key={post.id}>
                   {post.frontmatter.title}
                 </Heading>
+                <Flex direction={{ base: "column", md: "row" }}>
+                  <Box flexBasis="50%">
+                    <GatsbyImage
+                      image={getImage(post.frontmatter.image)}
+                      alt={post.frontmatter.title}
+                      className="blog-img"
+                    />
+                  </Box>
 
-                <GatsbyImage
-                  image={getImage(post.frontmatter.image)}
-                  alt={post.frontmatter.title}
-                  className="blog-img"
-                />
-
-                <Text lineHeight="7" fontSize={{ md: "lg", base: "md" }} mt={1}>
-                  {post.excerpt}
-                </Text>
+                  <Text
+                    flexBasis="50%"
+                    lineHeight="7"
+                    fontSize={{ md: "lg", base: "md" }}
+                    mt={{ base: "1", md: "0" }}
+                    pl={{ base: "0", md: "4" }}
+                  >
+                    {post.excerpt}
+                  </Text>
+                </Flex>
               </motion.div>
             </Link>
           );

@@ -55,6 +55,7 @@ body {
 .blog-img {
   height: 20rem;
   border-radius: 15px;
+  /* margin: 0 auto; */
 }
 .blog-card {
   margin-bottom: 16px;
