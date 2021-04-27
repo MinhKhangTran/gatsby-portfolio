@@ -4,6 +4,7 @@ import {
   Box,
   Button,
   ButtonGroup,
+  Flex,
   Heading,
   IconButton,
   Text,
@@ -19,6 +20,7 @@ const ProjectTemplate = ({ pageContext: { title }, data }) => {
   const {
     contentfulProject: { desc, image, demoUrl, githubUrl },
   } = data;
+  // console.log(image.description);
 
   return (
     <>
@@ -27,20 +29,82 @@ const ProjectTemplate = ({ pageContext: { title }, data }) => {
         <Button variant="solid" colorScheme="blau">
           <Link to="/projects">⬅ Zurück zur Übersicht</Link>
         </Button>
-        <Heading mt={8} textAlign="center" mb={4}>
-          <Text casing="uppercase">{title}</Text>
+        <Heading as="h1" mt={8} textAlign="center" mb={4}>
+          <Text fontSize="3xl" casing="uppercase">
+            {title}
+          </Text>
         </Heading>
         <GatsbyImage image={getImage(image)} alt={title} />
-
-        {desc.map((item) => {
+        <Text
+          casing="capitalize"
+          textAlign="center"
+          mt={2}
+          color="blau.300"
+          fontSize="lg"
+        >
+          {image.description}
+        </Text>
+        {desc.map((item, index) => {
           return (
-            <Box key={item.id}>
-              <Heading>{item.title}</Heading>
-              <Text>{item.desc.desc}</Text>
-              <GatsbyImage image={getImage(item.image)} alt={item.title} />
+            <Box my={8} key={item.id}>
+              <Heading my={2} as="h2" fontSize="2xl">
+                {item.title}
+              </Heading>
+              {/* desktop */}
+              <Flex
+                display={{ base: "none", md: "flex" }}
+                direction={index % 2 === 0 ? "row" : "row-reverse"}
+              >
+                <Text
+                  pr={index % 2 === 0 ? 4 : 0}
+                  pl={index % 2 === 0 ? 0 : 4}
+                  flexBasis={getImage(item.image) ? "50%" : "100%"}
+                  fontSize="lg"
+                  lineHeight="8"
+                >
+                  {item.desc.desc}
+                </Text>
+                <Flex
+                  display={getImage(item.image) ? "flex" : "none"}
+                  align="center"
+                  flexBasis="50%"
+                  direction="column"
+                >
+                  <GatsbyImage image={getImage(item.image)} alt={item.title} />
+                  <Text mt={2} color="blau.300" fontSize="lg">
+                    {item.image?.description}
+                  </Text>
+                </Flex>
+              </Flex>
+              {/* mobile */}
+              <Flex
+                display={{ base: "flex", md: "none" }}
+                direction={index % 2 === 0 ? "column" : "column-reverse"}
+              >
+                <Text
+                  pr={4}
+                  flexBasis={getImage(item.image) ? "50%" : "100%"}
+                  fontSize="lg"
+                  lineHeight="8"
+                >
+                  {item.desc.desc}
+                </Text>
+                <Flex
+                  align="center"
+                  flexBasis="50%"
+                  display={getImage(item.image) ? "flex" : "none"}
+                  direction="column"
+                >
+                  <GatsbyImage image={getImage(item.image)} alt={item.title} />
+                  <Text mt={2} mb={4} color="blau.300" fontSize="lg">
+                    {item.image?.description}
+                  </Text>
+                </Flex>
+              </Flex>
             </Box>
           );
         })}
+
         <ButtonGroup mt={8}>
           <a href={githubUrl} target="_blank" rel="noreferrer">
             <IconButton
@@ -88,6 +152,7 @@ export const query = graphql`
         }
         image {
           gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+          description
         }
       }
       stack {
@@ -95,6 +160,7 @@ export const query = graphql`
       }
       image {
         gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+        description
       }
     }
   }

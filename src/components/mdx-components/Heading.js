@@ -19,7 +19,7 @@ export const MyH2 = ({ children }) => {
 };
 export const MyH4 = ({ children }) => {
   return (
-    <Heading as="h4" fontSize="xl" my={2}>
+    <Heading as="h4" fontSize="2xl" my={2}>
       {children}
     </Heading>
   );
