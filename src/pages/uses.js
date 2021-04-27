@@ -24,6 +24,15 @@ const UsesPage = ({ data: { allContentfulUses } }) => {
           image={getImage(allContentfulUses.nodes[0].image)}
           alt={allContentfulUses.nodes[0].image.title}
         />
+        <Text
+          casing="capitalize"
+          textAlign="center"
+          mb={4}
+          color="blau.300"
+          fontSize="lg"
+        >
+          {allContentfulUses.nodes[0].image.title}
+        </Text>
         <Text>{allContentfulUses.nodes[0].usesDesc.usesDesc}</Text>
         {/* SOFTWARE TABLE */}
         <TableComponent title="Software" array={software} />
@@ -38,6 +47,15 @@ const UsesPage = ({ data: { allContentfulUses } }) => {
           image={getImage(allContentfulUses.nodes[0].gymImage)}
           alt={allContentfulUses.nodes[0].gymImage.title}
         />
+        <Text
+          casing="capitalize"
+          textAlign="center"
+          mb={4}
+          color="blau.300"
+          fontSize="lg"
+        >
+          {allContentfulUses.nodes[0].gymImage.title}
+        </Text>
         <Text>{allContentfulUses.nodes[0].gymDesc.gymDesc}</Text>
         {/* EQUIP TABLE */}
         <TableComponent title="Equipment" array={equip} color="blue" />

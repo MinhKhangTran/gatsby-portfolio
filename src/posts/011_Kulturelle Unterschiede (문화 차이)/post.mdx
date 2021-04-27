@@ -10,12 +10,22 @@ embeddedImages:
 
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Text } from "@chakra-ui/react";
 
 <GatsbyImage
   image={getImage(props.embeddedImages[0])}
   alt={props.embeddedImages[0].name}
   className="post-img"
 />
+<Text
+  casing="capitalize"
+  textAlign="center"
+  mb={4}
+  color="blau.300"
+  fontSize="lg"
+>
+  {props.embeddedImages[0].name}
+</Text>
 
 이번에 한국과 독일 문화 차이에 대해 쓰고 싶어요. 이 이야기는 제 경험이에요. 제가 거의 일년 동안 한국에 살아봤어요. 그리고 많은 것을 봤지만 경험을 아직 다 해보진 못했어요. 일년은 너무 짧아서.
 

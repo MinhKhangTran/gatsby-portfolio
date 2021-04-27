@@ -12,12 +12,22 @@ embeddedImages:
 
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Text } from "@chakra-ui/react";
 
 <GatsbyImage
   image={getImage(props.embeddedImages[0])}
   alt={props.embeddedImages[0].name}
   className="post-img"
 />
+<Text
+  casing="capitalize"
+  textAlign="center"
+  mb={4}
+  color="blau.300"
+  fontSize="lg"
+>
+  {props.embeddedImages[0].name}
+</Text>
 
 2017년에 저는 한국에 11개월쯤 있었어요. 저는 다양한 곳에 다녀왔지만 아직 더 보고 싶은 곳들이 있어요. 드라마랑 서강 책에서 영감이 생겼어요. 그래서 가보고 싶은 리스트를 쓸게요.
 
@@ -33,6 +43,15 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
   alt={props.embeddedImages[1].name}
   className="post-img"
 />
+<Text
+  casing="capitalize"
+  textAlign="center"
+  mb={4}
+  color="blau.300"
+  fontSize="lg"
+>
+  {props.embeddedImages[1].name}
+</Text>
 
 ---
 
@@ -49,6 +68,15 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
   alt={props.embeddedImages[2].name}
   className="post-img"
 />
+<Text
+  casing="capitalize"
+  textAlign="center"
+  mb={4}
+  color="blau.300"
+  fontSize="lg"
+>
+  {props.embeddedImages[2].name}
+</Text>
 
 #### 보너스
 

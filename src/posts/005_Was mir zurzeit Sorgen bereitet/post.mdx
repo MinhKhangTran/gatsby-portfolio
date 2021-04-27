@@ -10,12 +10,22 @@ embeddedImages:
 
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Text } from "@chakra-ui/react";
 
 <GatsbyImage
   image={getImage(props.embeddedImages[0])}
   alt={props.embeddedImages[0].name}
   className="post-img"
 />
+<Text
+  casing="capitalize"
+  textAlign="center"
+  mb={4}
+  color="blau.300"
+  fontSize="lg"
+>
+  {props.embeddedImages[0].name}
+</Text>
 
 요즘 전 세계에 코로나 바이러스가 있어요. 모든 사람들이 코로나 없어도 고민 있어요. 이 바이러스 때문에 사람들의 고민 꼭 늘였어요. 저는 조금 제 새로운 생긴 고민에 대해 쓰고 싶어요.
 

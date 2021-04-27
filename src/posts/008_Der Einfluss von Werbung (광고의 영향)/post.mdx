@@ -12,12 +12,22 @@ embeddedImages:
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Video } from "../../components/mdx-components/Video";
+import { Text } from "@chakra-ui/react";
 
 <GatsbyImage
   image={getImage(props.embeddedImages[0])}
   alt={props.embeddedImages[0].name}
   className="post-img"
 />
+<Text
+  casing="capitalize"
+  textAlign="center"
+  mb={4}
+  color="blau.300"
+  fontSize="lg"
+>
+  {props.embeddedImages[0].name}
+</Text>
 
 이번 주에 저는 광고에 대해 쓰고 싶어요. 그리고 저에게 무슨 영향을 주었는지. 옛날에 저는 다른 것과 사람들에게 쉽게 영향을 받았어요. 아마도 지금도. 그래서 조금 순진해 보여요.
 이 세상에는 광고들이 너무 많아요. 저는 심리에 대해 모르지만 광고는 중요한 매체라는 걸 잘 알아요.
@@ -32,6 +42,15 @@ import { Video } from "../../components/mdx-components/Video";
   alt={props.embeddedImages[1].name}
   className="post-img"
 />
+<Text
+  casing="capitalize"
+  textAlign="center"
+  mb={4}
+  color="blau.300"
+  fontSize="lg"
+>
+  {props.embeddedImages[1].name}
+</Text>
 
 하지만 한국 드라마에 있는 광고는 너무 신기해요. 독일 광고는 너무 분명해서 별로 좋아하지 않아요. 그리고 조금 과장해요. 하지만 저는 한국 드라마에 나오는 광고를 좋아해요 ㅋㅋㅋ. 많은 드라마에 카페하고 식당이 나와요. 예를 들면 A twosome place, pizza alvolo 등등. 이것을 보면 항상 배고프고 한국에 가고 싶어요 ㅠㅠ.
 다른 광고는 화장품이에요. 저는 남자라서 관심이 없어서 괜찮아요. 한국사람들은 광고를 어떻게 만드는 지 잘 알아요.

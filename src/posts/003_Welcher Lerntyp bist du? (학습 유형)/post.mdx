@@ -10,12 +10,22 @@ embeddedImages:
 
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Text } from "@chakra-ui/react";
 
 <GatsbyImage
   image={getImage(props.embeddedImages[0])}
   alt={props.embeddedImages[0].name}
   className="post-img"
 />
+<Text
+  casing="capitalize"
+  textAlign="center"
+  mb={4}
+  color="blau.300"
+  fontSize="lg"
+>
+  {props.embeddedImages[0].name}
+</Text>
 
 이번 주에 서강 책에서 흥미있는 글을 읽었어요. 그 글의 주제는 학습 유형이에요. 그 글에 따르면 학습 유형은 네 종류 있어요. 생각형, 순차형, 행동형, 전체형. 학습 유형을 알기 위해서 두 개의 테스트를 해야 돼요.
 

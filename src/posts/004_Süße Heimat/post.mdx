@@ -11,12 +11,22 @@ embeddedImages:
 
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Text } from "@chakra-ui/react";
 
 <GatsbyImage
   image={getImage(props.embeddedImages[0])}
   alt={props.embeddedImages[0].name}
   className="post-img"
 />
+<Text
+  casing="capitalize"
+  textAlign="center"
+  mb={4}
+  color="blau.300"
+  fontSize="lg"
+>
+  {props.embeddedImages[0].name}
+</Text>
 
 원래 저는 블로그 주제를 서강 4a 과에서 따와요. 그런데 이번 주의 주제는 발표예요. 말하는 발표와 쓰는 블로그 포스팅은 잘 안 어울려서 이번엔 조금 다른 걸 쓸게요.
 
@@ -55,6 +65,15 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
   alt={props.embeddedImages[1].name}
   className="post-img"
 />
+<Text
+  casing="capitalize"
+  textAlign="center"
+  mb={4}
+  color="blau.300"
+  fontSize="lg"
+>
+  {props.embeddedImages[1].name}
+</Text>
 
 저는 스포일링 많이 하고 싶지 않아요. 관심이 있으면 보세요😁.
 

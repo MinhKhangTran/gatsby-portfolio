@@ -10,6 +10,7 @@ embeddedImages:
 
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Text } from "@chakra-ui/react";
 
 이 블로그 포스팅은 조금 달라요. 저는 2월 말에 서강 책 4a를 끝냈어요. 저는 이 책을 복습하고 싶어요.
 모든 서강 책은 8과까지 있어요. 그리고 모든 과마다 제가 블로그 포스팅을 쓰려고 했어요.
@@ -21,6 +22,15 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
   alt={props.embeddedImages[0].name}
   className="post-img"
 />
+<Text
+  casing="capitalize"
+  textAlign="center"
+  mb={4}
+  color="blau.300"
+  fontSize="lg"
+>
+  {props.embeddedImages[0].name}
+</Text>
 
 ## 장점
 

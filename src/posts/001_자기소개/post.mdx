@@ -10,6 +10,7 @@ embeddedImages:
 
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Text } from "@chakra-ui/react";
 
 안녕하세요? 저는 독일에서 온 민캉트란입니다. 저는 2017년부터 한국에 거의 1년 쯤 있었어요. 독일에 돌아간 다음부터거의 한국어 공부 안 했어요. 저는 항상 한국어를 공부하려고 했어요. 하지만 저는 매일 핑계를 만들었어요. 지금 생각하면 좀 후회가 돼요.
 
@@ -20,6 +21,15 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
   alt={props.embeddedImages[0].name}
   className="post-img"
 />
+<Text
+  casing="capitalize"
+  textAlign="center"
+  mb={4}
+  color="blau.300"
+  fontSize="lg"
+>
+  {props.embeddedImages[0].name}
+</Text>
 
 저는 작은 회사에서 일해서 주중에 시간이 별로 없어요. 그렇지만 매일 약 1시간씩 공부할 거예요. 1시간은 짧지만 이렇게 하면 매일 할 수 있어요. 왜냐하면 1시간은 길지 않기 때문이에요.
 

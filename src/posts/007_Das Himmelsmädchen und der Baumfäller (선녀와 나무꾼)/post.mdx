@@ -12,6 +12,7 @@ embeddedImages:
 
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Text } from "@chakra-ui/react";
 
 한국사람들은 이 옛날이야기 “선녀와 나무꾼” 을 잘 아는 것 같아요. 하지만 저는 이 이야기를 서강 책에서 처음 봤어요. 독일에도 이렇게 옛날이야기가 (Märchen) 있지만 “선녀와 나무꾼”이랑 비슷한 것은 없다고 생각해요.
 
@@ -25,6 +26,15 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
   alt={props.embeddedImages[0].name}
   className="post-img"
 />
+<Text
+  casing="capitalize"
+  textAlign="center"
+  mb={4}
+  color="blau.300"
+  fontSize="lg"
+>
+  {props.embeddedImages[0].name}
+</Text>
 
 원래 이 이야기를 계속해요. 결국 나무꾼은 그의 가족을 못 봐서 닭이 됐어요. 저는 이 결론을 별로 좋아하지 읺아서 이제 부터 제 버전 쓸게요.
 
@@ -36,6 +46,15 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
   alt={props.embeddedImages[1].name}
   className="post-img"
 />
+<Text
+  casing="capitalize"
+  textAlign="center"
+  mb={4}
+  color="blau.300"
+  fontSize="lg"
+>
+  {props.embeddedImages[1].name}
+</Text>
 
 나무꾼은 이 기계를 타고 하늘로 올라갔어요. 하지만 도착하자마자 이 기계가 고장났어요. 하지만 그가 선녀를 또 만나게 된다면 다 괜찮아질거라고 생각했어요. 다행히 하늘 나라는 작아서 5일 후에 작은 도시에서 그의 아내를 찾았어요. 그 둘은 만나서 눈물을 흘리고 과거를 다 잊어버리고 서로 화해했어요.
 
@@ -47,5 +66,14 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
   alt={props.embeddedImages[2].name}
   className="post-img"
 />
+<Text
+  casing="capitalize"
+  textAlign="center"
+  mb={4}
+  color="blau.300"
+  fontSize="lg"
+>
+  {props.embeddedImages[2].name}
+</Text>
 
 이 버전은 해피엔딩이에요. 저는 이 이야기를 짧게 만들었어요 ㅋㅋㅋ 저는 많이 생각하지 않았어요. 그냥 해피엔딩으로 만들고 싶었어요. 여러분이 제 버전과 그림을 좋아하면 좋겠어요 ㅋㅋ.
