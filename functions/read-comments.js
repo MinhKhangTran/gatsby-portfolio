@@ -8,6 +8,7 @@ query READ_ALL_COMMENTS {
         text
         user
         slug
+        _ts
       }
     }
   }
