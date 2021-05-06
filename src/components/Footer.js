@@ -12,7 +12,7 @@ const Footer = () => {
       as="footer"
       w={{ base: "90%", md: "75%" }}
       mx="auto"
-      mt={8}
+      mt={16}
       justify="center"
       align="center"
       mb={4}

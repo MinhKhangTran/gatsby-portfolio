@@ -1,11 +1,14 @@
-html,
+/* html, */
 body {
   height: 100%;
 }
-#___gatsby,
-#gatsby-focus-wrapper {
-  height: 100%;
+#___gatsby {
+  min-height: 100vh;
 }
+#gatsby-focus-wrapper {
+  min-height: 100vh;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -24,14 +27,14 @@ body {
   -moz-border-radius: 50%;
   /* -khtml-border-radius: 50%; */
 }
-.chakra-ui-dark {
+/* .chakra-ui-dark {
   background: #021b49;
   color: #b7cefc;
 }
 .chakra-ui-light {
   background: #e3efff;
   color: #1040a3;
-}
+} */
 .chakra-ui-light .active {
   color: #00091d;
 }

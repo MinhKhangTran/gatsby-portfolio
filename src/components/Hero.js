@@ -20,7 +20,7 @@ const Hero = () => {
   const { allContentfulAboutme: about } = data;
   // console.log(about.nodes[0].childContentfulAboutmeAboutTextNode.about);
   return (
-    <Box h="100%">
+    <Box h="76vh">
       <Grid justifyContent="center" alignItems="center" h="100%" w="100%">
         <Flex justify="center" align="center" direction="column">
           {/* <Avatar size="2xl" name="MKT" /> */}

@@ -16,7 +16,12 @@ const Layout = ({ children }) => {
     <Flex direction="column" height="100%" bg={bgColor} color={textColor}>
       <Box className="content">
         <Navbar />
-        <Box h="80%" as="section" w={{ base: "90%", md: "75%" }} mx="auto">
+        <Box
+          minHeight="76vh"
+          as="section"
+          w={{ base: "90%", md: "75%" }}
+          mx="auto"
+        >
           {children}
         </Box>
       </Box>
