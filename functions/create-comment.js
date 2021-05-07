@@ -13,9 +13,17 @@ mutation CREATE_COMMENT($slug: String!, $text: String!, $user: String!) {
 
 exports.handler = async (event) => {
   //destrock vom body
-  const { slug, text, user } = JSON.parse(event.body);
+  const { slug, text, user, yuzuTea } = JSON.parse(event.body);
   const { data, errors } = await query(CREATE_COMMENT, { slug, text, user });
 
+  // console.log(yuzuTea);
+  // Check if they have filled out the honeypot
+  if (yuzuTea) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: "Expecto Patronum" }),
+    };
+  }
   if (errors) {
     return {
       statusCode: 500,

@@ -74,6 +74,10 @@ body {
   display: block;
 }
 
+.yuzuTea {
+  display: none;
+}
+
 /* Scrollbar Styles */
 body::-webkit-scrollbar {
   width: 9px;

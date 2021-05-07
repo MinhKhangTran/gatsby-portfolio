@@ -15,6 +15,7 @@ exports.handler = async (event) => {
   //destrock vom body
   const { id } = JSON.parse(event.body);
   const { data, errors } = await query(DELETE_COMMENT, { id });
+  console.log(id);
 
   if (errors) {
     return {
