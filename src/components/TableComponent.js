@@ -4,7 +4,7 @@ import React from "react";
 const TableComponent = ({ title, array, color = "blau" }) => {
   return (
     <>
-      <Heading mt={4} as="h3" fontSize="xl">
+      <Heading my={4} as="h3" fontSize="2xl">
         {title}
       </Heading>
       <Table colorScheme={color} mt={2} variant="striped">
@@ -12,7 +12,7 @@ const TableComponent = ({ title, array, color = "blau" }) => {
           {array.map((item) => {
             return (
               <Tr key={item.id}>
-                <Td>
+                <Td w={8}>
                   <Text
                     // color={`${color}.600`}
                     fontWeight="bold"
@@ -21,7 +21,7 @@ const TableComponent = ({ title, array, color = "blau" }) => {
                     {item.name}
                   </Text>
                 </Td>
-                <Td>{item.desc.desc}</Td>
+                <Td w={8}>{item.desc.desc}</Td>
               </Tr>
             );
           })}

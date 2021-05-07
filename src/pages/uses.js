@@ -40,7 +40,7 @@ const UsesPage = ({ data: { allContentfulUses } }) => {
         <TableComponent title="Hardware" array={hardware} />
         <Divider colorScheme="blau" orientation="horizontal" />
         {/* GYM */}
-        <Heading as="h2" fontSize="2xl" mt={8} mb={6}>
+        <Heading as="h2" fontSize="3xl" mt={8} mb={6}>
           /Gym-Uses
         </Heading>
         <GatsbyImage

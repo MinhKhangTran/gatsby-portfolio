@@ -1,18 +1,18 @@
-/* html, */
+html,
 body {
-  height: 100%;
+  min-height: 100%;
 }
 #___gatsby {
-  min-height: 100vh;
+  min-height: 100%;
 }
 #gatsby-focus-wrapper {
-  min-height: 100vh;
+  min-height: 100%;
 }
 
-body {
+/* body {
   display: flex;
   flex-direction: column;
-}
+} */
 .content {
   flex: 1 0 auto;
 }
@@ -27,14 +27,14 @@ body {
   -moz-border-radius: 50%;
   /* -khtml-border-radius: 50%; */
 }
-/* .chakra-ui-dark {
+.chakra-ui-dark {
   background: #021b49;
   color: #b7cefc;
 }
 .chakra-ui-light {
   background: #e3efff;
   color: #1040a3;
-} */
+}
 .chakra-ui-light .active {
   color: #00091d;
 }
