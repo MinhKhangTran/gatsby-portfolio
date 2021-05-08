@@ -41,10 +41,6 @@ const PostPage = ({ data, pageContext }) => {
     }
   }
 
-  async function deleteComment(id) {
-    await axios.delete("/api/delete-comment", { id });
-  }
-
   const bgColor = useColorModeValue("blau.100", "blau.900");
   const textColor = useColorModeValue("blau.600", "blau.100");
 
@@ -108,11 +104,12 @@ const PostPage = ({ data, pageContext }) => {
     <>
       <Seo title={title} />
       <Box>
-        <Link to="/blog">
-          <Button my={8} colorScheme="blau">
+        <Button my={8} colorScheme="blau">
+          <Link to="/blog" replace>
             Zurück zu den Posts
-          </Button>
-        </Link>
+          </Link>
+        </Button>
+
         <Heading>{title}</Heading>
         <MDXRenderer embeddedImages={embeddedImages}>{body}</MDXRenderer>
         <Heading mt={8}>Kommentare</Heading>
@@ -274,6 +271,12 @@ const PostPage = ({ data, pageContext }) => {
             </Button>
           </Flex>
         )}
+
+        <Button my={8} colorScheme="blau">
+          <Link to="/blog" replace>
+            Zurück zu den Posts
+          </Link>
+        </Button>
       </Box>
     </>
   );

@@ -78,6 +78,13 @@ body {
   display: none;
 }
 
+.chakra-ui-light .activebtn {
+  color: #5c8def;
+}
+.chakra-ui-dark .activebtn {
+  color: #00091d;
+}
+
 /* Scrollbar Styles */
 body::-webkit-scrollbar {
   width: 9px;
