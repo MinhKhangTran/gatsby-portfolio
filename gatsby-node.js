@@ -41,7 +41,7 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  const pageSize = 5;
+  const pageSize = 10;
   const pageCount = Math.ceil(posts.length / pageSize);
 
   const templatePath = path.resolve(`src/templates/blog-list.js`);
